@@ -13,6 +13,7 @@ from typing import Any
 INT_RE = re.compile(r"^-?(0|[1-9]\d*)$")
 FLOAT_RE = re.compile(r"^-?\d*\.\d+([eE][-+]?\d+)?$|^-?\d+[eE][-+]?\d+$")
 PADDED_RE = re.compile(r"^-?0\d+$")
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}([ T]\d{2}:\d{2}(:\d{2})?)?$")
 
 
 @dataclass
@@ -122,6 +123,8 @@ def kind(v: Any) -> str | None:
         return "int"
     if FLOAT_RE.match(s):
         return "float"
+    if DATE_RE.match(s):
+        return "date"
     if s.lower() in {"true", "false"}:
         return "bool"
     return "text"

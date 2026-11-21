@@ -1,0 +1,41 @@
+id,name,email,city,amount,qty,joined,status,tier
+5,Seth Jolly,seth.jolly72@example.com,Cedar Falls,519.76,37.0,2023-08-01,paused,C
+24,Yara Knox,yara.knox95@example.com,Eastport,2395.72,45.0,2020-11-26,active,B
+39,Ava Crane,xtess.abbot20@example.com,Cedar Falls,847.28,40.0,2024-01-25,active,A
+20,Gus Crane,gus.crane27@example.com,Harlow,815.7,22.0,2023-05-15,active,B
+13,Wren Marsh,wren.marsh86@example.com,Fairhaven,117.7,30.0,2021-12-28,paused,A
+23,Dev Dale,dev.dale63@example.com,Harlow,2404.57,20.0,2020-06-24,paused,C
+2,Quin Grove,quin.grove5@example.com,Brookvale,2171.06,5.0,2021-05-07,active,C
+36,Nia Grove,nia.grove28@example.com,Ashby,1262.91,19.0,2022-10-23,paused,C
+33,Yara Crane,yara.crane93@example.com,Cedar Falls,854.17,9.0,2020-02-26,paused,A
+38,Quin Ellis,quin.ellis69@example.com,Cedar Falls,2619.92,2.0,2024-11-22,trial,B
+37,Ivo Stone,ivo.stone54@example.com,Cedar Falls,309.22,48.0,2021-12-25,trial,C
+41,Tess Hale,tess.hale9@example.com,Eastport,4314.56,30,2020-01-24,closed,A
+14,Pia Brook,pia.brook28@example.com,Eastport,651.05,16.0,2022-03-25,trial,B
+22,Gus Vale,gus.vale49@example.com,Cedar Falls,3173.88,23.0,2023-05-18,closed,A
+29,Wren Vale,wren.vale45@example.com,Harlow,4043.79,47.0,2021-12-16,closed,C
+19,Otto Stone,otto.stone51@example.com,Glenwood,1997.9,7.0,2022-09-13,trial,A
+1,Kai Ellis,kai.ellis51@example.com,Ashby,366.82,35.0,2020-07-11,closed,A
+12,Pia Crane,pia.crane8@example.com,Eastport,3237.41,44.0,2024-08-10,trial,A
+40,Kai Reed,kai.reed68@example.com,Ironton,2415.02,50.0,2020-08-05,active,A
+32,Pia Frost,pia.frost56@example.com,Fairhaven,438.32,47.0,2022-03-21,active,B
+26,Wren Irwin,wren.irwin67@example.com,Juniper,4541.75,23.0,2024-04-29,paused,B
+15,Cara Frost,cara.frost58@example.com,Glenwood,2749.45,9.0,2024-08-04,trial,A
+27,Uma Hale,uma.hale79@example.com,Dunmore,4031.36,26.0,2024-02-24,paused,C
+31,UMA LOWE,uma.lowe83@example.com,Brookvale,4174.07,8.0,2025-02-06,trial,A
+25,Quin Lowe,quin.lowe19@example.com,Ironton,4571.16,49.0,2022-12-17,closed,B
+34,Uma Ellis,uma.ellis79@example.com,Juniper,4901.63,43.0,2025-04-03,closed,C
+30,Hana Dale,hana.dale30@example.com,Harlow,987.55,14.0,2022-09-15,active,A
+21,Ava Tate,ava.tate20@example.com,Ironton,511.81,24.0,2023-06-10,active,C
+10,Nia Brook,nia.brook86@example.com,Brookvale,3824.03,37.0,2024-06-04,closed,A
+7,Kai Oakes,kai.oakes75@example.com,Harlow,1811.1,16.0,2024-06-14,paused,C
+6,Dev Stone,dev.stone92@example.com,Brookvale,2824.02,40.0,2021-02-25,trial,C
+4,Ben Hale,ben.hale6@example.com,Ironton,4293.05,19.0,2022-05-08,paused,A
+17,Wren Lowe,hana.hale2@example.com,Harlow,4156.31,12.0,2021-06-22,active,C
+11,Wren Lowe,wren.lowe77@example.com,Harlow,2901.58,30.0,2020-05-20,active,B
+8,Cara Tate,cara.tate39@example.com,Ironton,2478.11,22.0,2024-02-02,trial,C
+16,Wren North,wren.north46@example.com,Glenwood,4788.87,10.0,2020-06-18,paused,B
+35,Rosa Stone,rosa.stone17@example.com,Ashby,76.14,47.0,2023-08-23,active,B
+3,Ben Tate,ben.tate16@example.com,Dunmore,3154.98,38.0,2025-04-24,active,A
+9,Tess Crane,tess.crane16@example.com,Ironton,2093.52,49.0,2021-12-01,paused,B
+18,Ezra North,ezra.north69@example.com,  Fairhaven ,3051.01,21.0,2025-05-05,paused,A

@@ -1,0 +1,69 @@
+{
+  "key": [
+    "id"
+  ],
+  "rows_old": 40,
+  "rows_new": 40,
+  "rows_added": 1,
+  "rows_removed": 1,
+  "rows_changed": 4,
+  "cells_changed": 7,
+  "columns_added": [
+    "tier"
+  ],
+  "columns_removed": [
+    "region"
+  ],
+  "type_changes": {
+    "qty": {
+      "old": "int",
+      "new": "float"
+    }
+  },
+  "duplicate_keys_old": [],
+  "duplicate_keys_new": [],
+  "added_keys": [
+    "41"
+  ],
+  "removed_keys": [
+    "28"
+  ],
+  "changed": {
+    "39": {
+      "name": {
+        "old": "Tess Abbot",
+        "new": "Ava Crane"
+      },
+      "email": {
+        "old": "tess.abbot20@example.com",
+        "new": "xtess.abbot20@example.com"
+      },
+      "amount": {
+        "old": 712.09,
+        "new": "847.28"
+      }
+    },
+    "32": {
+      "status": {
+        "old": "trial",
+        "new": "active"
+      }
+    },
+    "26": {
+      "city": {
+        "old": "Fairhaven",
+        "new": "Juniper"
+      }
+    },
+    "17": {
+      "name": {
+        "old": "Hana Hale",
+        "new": "Wren Lowe"
+      },
+      "status": {
+        "old": "closed",
+        "new": "active"
+      }
+    }
+  }
+}
