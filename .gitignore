@@ -13,3 +13,4 @@ htmlcov/
 benchmark/data/
 diff-out/
 ~$*.xlsx
+_site/

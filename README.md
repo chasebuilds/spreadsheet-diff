@@ -2,6 +2,10 @@
 
 [![ci](https://github.com/chasebuilds/spreadsheet-diff/actions/workflows/ci.yml/badge.svg)](https://github.com/chasebuilds/spreadsheet-diff/actions/workflows/ci.yml) ![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue) [![MIT license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
+**[Live demo: try it in your browser](https://chasebuilds.github.io/spreadsheet-diff/)**. Drop in your own file or run the bundled sample with one click. The real package runs in the page with Pyodide, so files never leave your browser.
+
+[![The live demo after running the sample: the tool's summary, result tabs and output table](docs/demo.png)](https://chasebuilds.github.io/spreadsheet-diff/)
+
 Compares two versions of a CSV or Excel file by a key column. It reports rows that were added, rows that were removed, and rows that changed, cell by cell with the old and new value. It also reports columns that were added or removed and columns whose type changed. The result is an Excel report with changed cells highlighted, plus an optional JSON summary. Everything runs offline.
 
 ## Measured result
