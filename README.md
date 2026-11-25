@@ -116,3 +116,11 @@ The sample files were made with `python -m benchmark.generate --seed 7 --rows 40
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## More from Chase Builds
+
+- **[pdf-table-extractor](https://github.com/chasebuilds/pdf-table-extractor)**: 38,528 of 38,968 cells exact, 240 of 240 tables found. ([live demo](https://chasebuilds.github.io/pdf-table-extractor/))
+- **[address-normalizer](https://github.com/chasebuilds/address-normalizer)**: Messy US mailing addresses to standardized, split fields, with duplicates grouped. ([live demo](https://chasebuilds.github.io/address-normalizer/))
+- **[excel-formula-auditor](https://github.com/chasebuilds/excel-formula-auditor)**: Finds broken formulas, hard-coded numbers and dead links before they cost you. ([live demo](https://chasebuilds.github.io/excel-formula-auditor/))
+
+[All projects, sorted by industry](https://github.com/chasebuilds) · [chasebuilds.github.io](https://chasebuilds.github.io)
