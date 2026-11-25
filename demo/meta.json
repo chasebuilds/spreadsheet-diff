@@ -1,0 +1,7 @@
+{
+  "title": "Spreadsheet Diff: Compare two spreadsheet versions cell by cell | Chase Builds",
+  "description": "Compare two versions of a CSV or Excel file by key: added, removed and changed rows, cell by cell, in a highlighted report. Runs in your browser, no upload.",
+  "url": "https://chasebuilds.github.io/spreadsheet-diff/",
+  "image": "docs/demo.png",
+  "repo": "spreadsheet-diff"
+}

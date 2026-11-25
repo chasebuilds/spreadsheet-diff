@@ -5,7 +5,7 @@ const D = window.DEMO;
 const $ = (s) => document.querySelector(s);
 
 const HELPERS = `
-import io, os, sys, json, contextlib, zipfile, csv
+import io, os, sys, json, contextlib, zipfile, csv, datetime
 from openpyxl import load_workbook
 
 def _fill(c):
@@ -17,6 +17,13 @@ def _fill(c):
         return None
     return "#" + rgb[-6:]
 
+def _text(v):
+    if v is None:
+        return ""
+    if isinstance(v, datetime.datetime) and v.time() == datetime.time(0):
+        return v.date().isoformat()
+    return str(v)
+
 def sheets_from_xlsx(path, limit=200):
     wb = load_workbook(path)
     out = []
@@ -25,7 +32,7 @@ def sheets_from_xlsx(path, limit=200):
         for row in ws.iter_rows():
             total += 1
             if len(rows) <= limit:
-                rows.append(["" if c.value is None else str(c.value) for c in row])
+                rows.append([_text(c.value) for c in row])
                 fills.append([_fill(c) for c in row])
         out.append({"name": ws.title, "rows": rows, "fills": fills, "total": max(total - 1, 0)})
     return out
@@ -69,6 +76,8 @@ async function boot() {
     await py.loadPackage("micropip");
     const micropip = py.pyimport("micropip");
     await micropip.install(D.packages);
+    // Packages whose only non-pure dependency is not needed by this tool (named on the page).
+    if (D.pip_nodeps) await micropip.install.callKwargs(D.pip_nodeps, { deps: false });
     const zip = await (await fetch("pkg.zip")).arrayBuffer();
     py.FS.mkdirTree("/app");
     py.unpackArchive(zip, "zip", { extractDir: "/app" });
@@ -89,7 +98,7 @@ function buildInputs() {
     zone.className = "drop card";
     zone.innerHTML = `<input type="file" accept="${inp.accept}" ${inp.multiple ? "multiple" : ""} hidden>
       <span class="drop-label">${inp.label}</span>
-      <span class="drop-file" data-for="${inp.id}">Drop a file here or click to choose</span>`;
+      <span class="drop-file" data-for="${inp.id}">${inp.optional ? "Optional: leave empty to use the sample" : "Drop a file here or click to choose"}</span>`;
     const fileInput = zone.querySelector("input");
     const take = async (files) => {
       picked[inp.id] = await Promise.all(
@@ -129,9 +138,9 @@ function readOptions() {
   return out;
 }
 
-async function loadSamples() {
+async function loadSamples(only = D.inputs) {
   const out = {};
-  for (const inp of D.inputs) {
+  for (const inp of only) {
     const list = Array.isArray(inp.sample) ? inp.sample : [inp.sample];
     out[inp.id] = await Promise.all(list.map(async (p) => ({
       name: p.split("/").pop(),
@@ -143,14 +152,17 @@ async function loadSamples() {
 
 async function run(useSample) {
   if (!py) return;
-  if (!useSample && D.inputs.some((i) => !picked[i.id]?.length)) {
+  if (!useSample && D.inputs.some((i) => !i.optional && !picked[i.id]?.length)) {
     setStatus("Choose a file for each box first, or use the sample.", "bad");
     return;
   }
   setStatus("Running...", "busy");
   for (const b of document.querySelectorAll("button.run")) b.disabled = true;
   try {
-    const files = useSample ? await loadSamples() : picked;
+    // An optional box left empty falls back to its bundled sample (for example a rules file).
+    const files = useSample
+      ? await loadSamples()
+      : { ...(await loadSamples(D.inputs.filter((i) => i.optional && !picked[i.id]?.length))), ...picked };
     py.runPython(`import shutil, os\nshutil.rmtree("/work", ignore_errors=True)\nos.makedirs("/work/in")`);
     const paths = {};
     for (const [id, list] of Object.entries(files)) {
@@ -221,10 +233,10 @@ function escapeHtml(s) {
   return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 }
 
-document.title = `${D.title} | Live demo`;
 $("#title").textContent = D.title;
 $("#tagline").textContent = D.tagline;
 $("#repo").href = `https://github.com/chasebuilds/${D.repo}`;
+$("#repo-foot").href = `https://github.com/chasebuilds/${D.repo}`;
 $("#sample-note").innerHTML = D.sampleNote;
 buildInputs();
 $("#run-sample").onclick = () => run(true);
